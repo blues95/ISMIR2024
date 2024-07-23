@@ -379,10 +379,182 @@ ISMIR 2024</p>
 <li>Comparing AF models and AFSRC models</li>
 <li>Comparing AF model and null models</li>
 <li>Comparing AFSRC model and null models</li>
+<li>Results of leave-one-subject-out cross-validation</li>
 </ol>
 </div>
 <div id="summary-of-af-models-predicting-arousal" class="section level2">
 <h2>1. Summary of AF models predicting arousal</h2>
+<pre class="r"><code>tab_model(model_aro_env_af, model_aro_env_afsrc)</code></pre>
+<table style="border-collapse:collapse; border:none;">
+<tr>
+<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
+ 
+</th>
+<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+aro
+</th>
+<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+aro
+</th>
+</tr>
+<tr>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
+Predictors
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+Estimates
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+CI
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+p
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+Estimates
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+CI
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
+p
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+(Intercept)
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+4.81
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+4.53 – 5.09
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+<strong>&lt;0.001</strong>
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+5.36
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+4.73 – 5.98
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+<strong>&lt;0.001</strong>
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+envelope
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.02
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.13 – 0.08
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.682
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.03
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.14 – 0.08
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+0.573
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+src env
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-2.30
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-4.66 – 0.06
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+0.056
+</td>
+</tr>
+<tr>
+<td colspan="7" style="font-weight:bold; text-align:left; padding-top:.8em;">
+Random Effects
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+σ<sup>2</sup>
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+1.60
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+1.59
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+τ<sub>00</sub>
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.92 <sub>id</sub>
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.94 <sub>id</sub>
+</td>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+ICC
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.37
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.37
+</td>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+N
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+54 <sub>id</sub>
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+54 <sub>id</sub>
+</td>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
+Observations
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
+540
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
+540
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.000 / 0.365
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.006 / 0.376
+</td>
+</tr>
+</table>
 <pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 lmerModLmerTest]
 Formula: aro ~ envelope + (1 | id)
@@ -3638,6 +3810,729 @@ model_pre_null          3 1847.1 1860 -920.54   1841.1
 model_pre_flat_afsrc    5 1843.6 1865 -916.79   1833.6 7.5011  2     0.0235 *
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="results-of-leave-one-subject-out-cross-validation" class="section level2">
+<h2>12. Results of leave-one-subject-out cross-validation</h2>
+<ul>
+<li>model_aro_env_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.549114
+bias-adjusted cross-validation criterion = 2.548686
+95% CI for bias-adjusted CV criterion = (2.263912, 2.833461)
+full-sample criterion = 2.503407 </code></pre>
+<ul>
+<li>model_aro_rms_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.548733
+bias-adjusted cross-validation criterion = 2.548311
+95% CI for bias-adjusted CV criterion = (2.26264, 2.833982)
+full-sample criterion = 2.503559 </code></pre>
+<ul>
+<li>model_aro_spf_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.549641
+bias-adjusted cross-validation criterion = 2.549212
+95% CI for bias-adjusted CV criterion = (2.264088, 2.834337)
+full-sample criterion = 2.503787 </code></pre>
+<ul>
+<li>model_aro_zecr_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.549077
+bias-adjusted cross-validation criterion = 2.548655
+95% CI for bias-adjusted CV criterion = (2.263259, 2.834051)
+full-sample criterion = 2.50388 </code></pre>
+<ul>
+<li>model_aro_rgh_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.52299
+bias-adjusted cross-validation criterion = 2.52257
+95% CI for bias-adjusted CV criterion = (2.24171, 2.803429)
+full-sample criterion = 2.478054 </code></pre>
+<ul>
+<li>model_aro_entp_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.54571
+bias-adjusted cross-validation criterion = 2.545299
+95% CI for bias-adjusted CV criterion = (2.260592, 2.830005)
+full-sample criterion = 2.501749 </code></pre>
+<ul>
+<li>model_aro_cent_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.546113
+bias-adjusted cross-validation criterion = 2.545711
+95% CI for bias-adjusted CV criterion = (2.261096, 2.830326)
+full-sample criterion = 2.503077 </code></pre>
+<ul>
+<li>model_aro_spd_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.547215
+bias-adjusted cross-validation criterion = 2.5468
+95% CI for bias-adjusted CV criterion = (2.262397, 2.831202)
+full-sample criterion = 2.50274 </code></pre>
+<ul>
+<li>model_aro_rlf_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.540208
+bias-adjusted cross-validation criterion = 2.539812
+95% CI for bias-adjusted CV criterion = (2.256286, 2.823337)
+full-sample criterion = 2.497784 </code></pre>
+<ul>
+<li>model_aro_flat_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.525577
+bias-adjusted cross-validation criterion = 2.525178
+95% CI for bias-adjusted CV criterion = (2.242818, 2.807538)
+full-sample criterion = 2.482918 </code></pre>
+<ul>
+<li>model_aro_env_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.558702
+bias-adjusted cross-validation criterion = 2.55822
+95% CI for bias-adjusted CV criterion = (2.273161, 2.843279)
+full-sample criterion = 2.507723 </code></pre>
+<ul>
+<li>model_aro_rms_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.552615
+bias-adjusted cross-validation criterion = 2.552133
+95% CI for bias-adjusted CV criterion = (2.266869, 2.837398)
+full-sample criterion = 2.500678 </code></pre>
+<ul>
+<li>model_aro_spf_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.553475
+bias-adjusted cross-validation criterion = 2.552978
+95% CI for bias-adjusted CV criterion = (2.267493, 2.838463)
+full-sample criterion = 2.500511 </code></pre>
+<ul>
+<li>model_aro_zecr_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.560901
+bias-adjusted cross-validation criterion = 2.560411
+95% CI for bias-adjusted CV criterion = (2.272905, 2.847918)
+full-sample criterion = 2.508642 </code></pre>
+<ul>
+<li>model_aro_rgh_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.528784
+bias-adjusted cross-validation criterion = 2.5283
+95% CI for bias-adjusted CV criterion = (2.247013, 2.809588)
+full-sample criterion = 2.476602 </code></pre>
+<ul>
+<li>model_aro_entp_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.559909
+bias-adjusted cross-validation criterion = 2.559385
+95% CI for bias-adjusted CV criterion = (2.271839, 2.846931)
+full-sample criterion = 2.506444 </code></pre>
+<ul>
+<li>model_aro_cent_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.560868
+bias-adjusted cross-validation criterion = 2.560347
+95% CI for bias-adjusted CV criterion = (2.269808, 2.850886)
+full-sample criterion = 2.507976 </code></pre>
+<ul>
+<li>model_aro_spd_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.578042
+bias-adjusted cross-validation criterion = 2.577429
+95% CI for bias-adjusted CV criterion = (2.286908, 2.86795)
+full-sample criterion = 2.521484 </code></pre>
+<ul>
+<li>model_aro_rlf_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.562442
+bias-adjusted cross-validation criterion = 2.561924
+95% CI for bias-adjusted CV criterion = (2.270305, 2.853544)
+full-sample criterion = 2.508638 </code></pre>
+<ul>
+<li>model_aro_flat_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.550328
+bias-adjusted cross-validation criterion = 2.549814
+95% CI for bias-adjusted CV criterion = (2.259981, 2.839648)
+full-sample criterion = 2.496625 </code></pre>
+<ul>
+<li>model_val_env_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.628995
+bias-adjusted cross-validation criterion = 2.628474
+95% CI for bias-adjusted CV criterion = (2.377856, 2.879093)
+full-sample criterion = 2.573262 </code></pre>
+<ul>
+<li>model_val_rms_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.606717
+bias-adjusted cross-validation criterion = 2.606198
+95% CI for bias-adjusted CV criterion = (2.357125, 2.855271)
+full-sample criterion = 2.551189 </code></pre>
+<ul>
+<li>model_val_spf_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.629002
+bias-adjusted cross-validation criterion = 2.62849
+95% CI for bias-adjusted CV criterion = (2.378553, 2.878427)
+full-sample criterion = 2.574243 </code></pre>
+<ul>
+<li>model_val_zecr_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.615505
+bias-adjusted cross-validation criterion = 2.614989
+95% CI for bias-adjusted CV criterion = (2.364952, 2.865026)
+full-sample criterion = 2.560307 </code></pre>
+<ul>
+<li>model_val_rgh_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.639018
+bias-adjusted cross-validation criterion = 2.638503
+95% CI for bias-adjusted CV criterion = (2.385789, 2.891217)
+full-sample criterion = 2.583911 </code></pre>
+<ul>
+<li>model_val_entp_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.637814
+bias-adjusted cross-validation criterion = 2.637301
+95% CI for bias-adjusted CV criterion = (2.384584, 2.890018)
+full-sample criterion = 2.582923 </code></pre>
+<ul>
+<li>model_val_cent_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.638121
+bias-adjusted cross-validation criterion = 2.637619
+95% CI for bias-adjusted CV criterion = (2.38486, 2.890378)
+full-sample criterion = 2.584402 </code></pre>
+<ul>
+<li>model_val_spd_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.630077
+bias-adjusted cross-validation criterion = 2.629569
+95% CI for bias-adjusted CV criterion = (2.377822, 2.881316)
+full-sample criterion = 2.575778 </code></pre>
+<ul>
+<li>model_val_rlf_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.638714
+bias-adjusted cross-validation criterion = 2.638213
+95% CI for bias-adjusted CV criterion = (2.385263, 2.891163)
+full-sample criterion = 2.58513 </code></pre>
+<ul>
+<li>model_val_flat_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.631374
+bias-adjusted cross-validation criterion = 2.630869
+95% CI for bias-adjusted CV criterion = (2.378628, 2.88311)
+full-sample criterion = 2.577325 </code></pre>
+<ul>
+<li>model_val_env_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.641166
+bias-adjusted cross-validation criterion = 2.640522
+95% CI for bias-adjusted CV criterion = (2.389296, 2.891749)
+full-sample criterion = 2.575436 </code></pre>
+<ul>
+<li>model_val_rms_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.614555
+bias-adjusted cross-validation criterion = 2.613966
+95% CI for bias-adjusted CV criterion = (2.364208, 2.863725)
+full-sample criterion = 2.551641 </code></pre>
+<ul>
+<li>model_val_spf_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.677248
+bias-adjusted cross-validation criterion = 2.676636
+95% CI for bias-adjusted CV criterion = (2.426426, 2.926845)
+full-sample criterion = 2.614507 </code></pre>
+<ul>
+<li>model_val_zecr_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.623359
+bias-adjusted cross-validation criterion = 2.622777
+95% CI for bias-adjusted CV criterion = (2.372154, 2.8734)
+full-sample criterion = 2.562289 </code></pre>
+<ul>
+<li>model_val_rgh_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.646263
+bias-adjusted cross-validation criterion = 2.645699
+95% CI for bias-adjusted CV criterion = (2.392373, 2.899024)
+full-sample criterion = 2.585815 </code></pre>
+<ul>
+<li>model_val_entp_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.64042
+bias-adjusted cross-validation criterion = 2.639764
+95% CI for bias-adjusted CV criterion = (2.386195, 2.893333)
+full-sample criterion = 2.574884 </code></pre>
+<ul>
+<li>model_val_cent_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.659331
+bias-adjusted cross-validation criterion = 2.658691
+95% CI for bias-adjusted CV criterion = (2.404067, 2.913315)
+full-sample criterion = 2.594601 </code></pre>
+<ul>
+<li>model_val_spd_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.655903
+bias-adjusted cross-validation criterion = 2.655017
+95% CI for bias-adjusted CV criterion = (2.400202, 2.909833)
+full-sample criterion = 2.582298 </code></pre>
+<ul>
+<li>model_val_rlf_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.663394
+bias-adjusted cross-validation criterion = 2.662742
+95% CI for bias-adjusted CV criterion = (2.408409, 2.917074)
+full-sample criterion = 2.597324 </code></pre>
+<ul>
+<li>model_val_flat_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 2.661051
+bias-adjusted cross-validation criterion = 2.66042
+95% CI for bias-adjusted CV criterion = (2.406096, 2.914745)
+full-sample criterion = 2.596662 </code></pre>
+<ul>
+<li>model_fam_env_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.053617
+bias-adjusted cross-validation criterion = 6.051972
+95% CI for bias-adjusted CV criterion = (5.701051, 6.402894)
+full-sample criterion = 5.877641 </code></pre>
+<ul>
+<li>model_fam_rms_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.023178
+bias-adjusted cross-validation criterion = 6.02154
+95% CI for bias-adjusted CV criterion = (5.666457, 6.376622)
+full-sample criterion = 5.847879 </code></pre>
+<ul>
+<li>model_fam_spf_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.053078
+bias-adjusted cross-validation criterion = 6.051441
+95% CI for bias-adjusted CV criterion = (5.700418, 6.402465)
+full-sample criterion = 5.877881 </code></pre>
+<ul>
+<li>model_fam_zecr_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.05332
+bias-adjusted cross-validation criterion = 6.05168
+95% CI for bias-adjusted CV criterion = (5.700573, 6.402786)
+full-sample criterion = 5.877844 </code></pre>
+<ul>
+<li>model_fam_rgh_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.054417
+bias-adjusted cross-validation criterion = 6.052768
+95% CI for bias-adjusted CV criterion = (5.70101, 6.404527)
+full-sample criterion = 5.877981 </code></pre>
+<ul>
+<li>model_fam_entp_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.053439
+bias-adjusted cross-validation criterion = 6.0518
+95% CI for bias-adjusted CV criterion = (5.700239, 6.403362)
+full-sample criterion = 5.878117 </code></pre>
+<ul>
+<li>model_fam_cent_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.048685
+bias-adjusted cross-validation criterion = 6.047024
+95% CI for bias-adjusted CV criterion = (5.695468, 6.39858)
+full-sample criterion = 5.870986 </code></pre>
+<ul>
+<li>model_fam_spd_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.053078
+bias-adjusted cross-validation criterion = 6.051441
+95% CI for bias-adjusted CV criterion = (5.700418, 6.402465)
+full-sample criterion = 5.877881 </code></pre>
+<ul>
+<li>model_fam_rlf_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.04378
+bias-adjusted cross-validation criterion = 6.042117
+95% CI for bias-adjusted CV criterion = (5.689595, 6.394639)
+full-sample criterion = 5.865843 </code></pre>
+<ul>
+<li>model_fam_flat_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.026035
+bias-adjusted cross-validation criterion = 6.024341
+95% CI for bias-adjusted CV criterion = (5.67074, 6.377941)
+full-sample criterion = 5.844783 </code></pre>
+<ul>
+<li>model_fam_env_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.030731
+bias-adjusted cross-validation criterion = 6.029009
+95% CI for bias-adjusted CV criterion = (5.678813, 6.379205)
+full-sample criterion = 5.847432 </code></pre>
+<ul>
+<li>model_fam_rms_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 5.971538
+bias-adjusted cross-validation criterion = 5.969764
+95% CI for bias-adjusted CV criterion = (5.616908, 6.32262)
+full-sample criterion = 5.786535 </code></pre>
+<ul>
+<li>model_fam_spf_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.063785
+bias-adjusted cross-validation criterion = 6.062054
+95% CI for bias-adjusted CV criterion = (5.710211, 6.413897)
+full-sample criterion = 5.8822 </code></pre>
+<ul>
+<li>model_fam_zecr_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.065264
+bias-adjusted cross-validation criterion = 6.063484
+95% CI for bias-adjusted CV criterion = (5.704178, 6.42279)
+full-sample criterion = 5.868582 </code></pre>
+<ul>
+<li>model_fam_rgh_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 5.997946
+bias-adjusted cross-validation criterion = 5.996256
+95% CI for bias-adjusted CV criterion = (5.647378, 6.345133)
+full-sample criterion = 5.816326 </code></pre>
+<ul>
+<li>model_fam_entp_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 6.014139
+bias-adjusted cross-validation criterion = 6.012408
+95% CI for bias-adjusted CV criterion = (5.660072, 6.364745)
+full-sample criterion = 5.83005 </code></pre>
+<ul>
+<li>model_fam_cent_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 5.952503
+bias-adjusted cross-validation criterion = 5.950669
+95% CI for bias-adjusted CV criterion = (5.595379, 6.305958)
+full-sample criterion = 5.762486 </code></pre>
+<ul>
+<li>model_fam_spd_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 5.954775
+bias-adjusted cross-validation criterion = 5.953043
+95% CI for bias-adjusted CV criterion = (5.603529, 6.302558)
+full-sample criterion = 5.767103 </code></pre>
+<ul>
+<li>model_fam_rlf_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 5.932681
+bias-adjusted cross-validation criterion = 5.93087
+95% CI for bias-adjusted CV criterion = (5.576549, 6.285191)
+full-sample criterion = 5.741945 </code></pre>
+<ul>
+<li>model_fam_flat_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 5.908489
+bias-adjusted cross-validation criterion = 5.906594
+95% CI for bias-adjusted CV criterion = (5.552954, 6.260233)
+full-sample criterion = 5.711914 </code></pre>
+<ul>
+<li>model_pre_env_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.823807
+bias-adjusted cross-validation criterion = 4.822492
+95% CI for bias-adjusted CV criterion = (4.473796, 5.171189)
+full-sample criterion = 4.68319 </code></pre>
+<ul>
+<li>model_pre_rms_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.82886
+bias-adjusted cross-validation criterion = 4.827549
+95% CI for bias-adjusted CV criterion = (4.480392, 5.174706)
+full-sample criterion = 4.688561 </code></pre>
+<ul>
+<li>model_pre_spf_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.836122
+bias-adjusted cross-validation criterion = 4.834809
+95% CI for bias-adjusted CV criterion = (4.487631, 5.181988)
+full-sample criterion = 4.695655 </code></pre>
+<ul>
+<li>model_pre_zecr_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.830747
+bias-adjusted cross-validation criterion = 4.829433
+95% CI for bias-adjusted CV criterion = (4.48134, 5.177525)
+full-sample criterion = 4.690112 </code></pre>
+<ul>
+<li>model_pre_rgh_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.841698
+bias-adjusted cross-validation criterion = 4.840379
+95% CI for bias-adjusted CV criterion = (4.492892, 5.187867)
+full-sample criterion = 4.700574 </code></pre>
+<ul>
+<li>model_pre_entp_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.832514
+bias-adjusted cross-validation criterion = 4.831207
+95% CI for bias-adjusted CV criterion = (4.483284, 5.179131)
+full-sample criterion = 4.692681 </code></pre>
+<ul>
+<li>model_pre_cent_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.842022
+bias-adjusted cross-validation criterion = 4.840704
+95% CI for bias-adjusted CV criterion = (4.493707, 5.187701)
+full-sample criterion = 4.701007 </code></pre>
+<ul>
+<li>model_pre_spd_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.841546
+bias-adjusted cross-validation criterion = 4.840223
+95% CI for bias-adjusted CV criterion = (4.493789, 5.186656)
+full-sample criterion = 4.699982 </code></pre>
+<ul>
+<li>model_pre_rlf_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.845133
+bias-adjusted cross-validation criterion = 4.843813
+95% CI for bias-adjusted CV criterion = (4.49735, 5.190275)
+full-sample criterion = 4.703884 </code></pre>
+<ul>
+<li>model_pre_flat_af</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.831526
+bias-adjusted cross-validation criterion = 4.830198
+95% CI for bias-adjusted CV criterion = (4.482368, 5.178029)
+full-sample criterion = 4.689503 </code></pre>
+<ul>
+<li>model_pre_env_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.83306
+bias-adjusted cross-validation criterion = 4.831674
+95% CI for bias-adjusted CV criterion = (4.482403, 5.180945)
+full-sample criterion = 4.686252 </code></pre>
+<ul>
+<li>model_pre_rms_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.849186
+bias-adjusted cross-validation criterion = 4.847821
+95% CI for bias-adjusted CV criterion = (4.499117, 5.196524)
+full-sample criterion = 4.702667 </code></pre>
+<ul>
+<li>model_pre_spf_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.858328
+bias-adjusted cross-validation criterion = 4.856929
+95% CI for bias-adjusted CV criterion = (4.509045, 5.204814)
+full-sample criterion = 4.713514 </code></pre>
+<ul>
+<li>model_pre_zecr_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.855658
+bias-adjusted cross-validation criterion = 4.854023
+95% CI for bias-adjusted CV criterion = (4.501722, 5.206325)
+full-sample criterion = 4.697677 </code></pre>
+<ul>
+<li>model_pre_rgh_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.841834
+bias-adjusted cross-validation criterion = 4.840483
+95% CI for bias-adjusted CV criterion = (4.49292, 5.188047)
+full-sample criterion = 4.696464 </code></pre>
+<ul>
+<li>model_pre_entp_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.833055
+bias-adjusted cross-validation criterion = 4.831664
+95% CI for bias-adjusted CV criterion = (4.483378, 5.17995)
+full-sample criterion = 4.686155 </code></pre>
+<ul>
+<li>model_pre_cent_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.855694
+bias-adjusted cross-validation criterion = 4.854311
+95% CI for bias-adjusted CV criterion = (4.506436, 5.202186)
+full-sample criterion = 4.704858 </code></pre>
+<ul>
+<li>model_pre_spd_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.832157
+bias-adjusted cross-validation criterion = 4.830758
+95% CI for bias-adjusted CV criterion = (4.484667, 5.176849)
+full-sample criterion = 4.682448 </code></pre>
+<ul>
+<li>model_pre_rlf_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.857482
+bias-adjusted cross-validation criterion = 4.856104
+95% CI for bias-adjusted CV criterion = (4.508907, 5.2033)
+full-sample criterion = 4.707747 </code></pre>
+<ul>
+<li>model_pre_flat_afsrc</li>
+</ul>
+<pre><code>n-Fold Cross Validation based on 54 {id} clusters
+criterion: mse
+cross-validation criterion = 4.854962
+bias-adjusted cross-validation criterion = 4.853581
+95% CI for bias-adjusted CV criterion = (4.503862, 5.203299)
+full-sample criterion = 4.705002 </code></pre>
 </div>
 
 
